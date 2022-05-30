@@ -1,0 +1,5 @@
+<Repositories>
+	<Repository Name='TradingDB'>
+		<ADODatabaseSetting DBProviderName='System.Data.SQLite' DBConnectionString='Data Source=.\Database\TradingDB.db3;datetimeformat=CurrentCulture'/>
+	</Repository>	
+</Repositories>

@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BD917393-CD72-4CCA-B6CF-3F6BF49A73E4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IGTradingLib</RootNamespace>
+    <AssemblyName>IGTradingLib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotNetClient_N2, Version=2.0.4168.21411, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdPartyDlls\DotNetClient_N2.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdPartyDlls\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLCrypto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d4421c8a4786956c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdPartyDlls\PCLCrypto.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Validation, Version=2.0.0.0, Culture=neutral, PublicKeyToken=2fc06f0d701809a7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdPartyDlls\Validation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataModel\DataStreamPrice.cs" />
+    <Compile Include="DataModel\InstrumentDataID.cs" />
+    <Compile Include="DataModel\InstrumentDetails.cs" />
+    <Compile Include="DataModel\InstrumentHistoryData.cs" />
+    <Compile Include="DataModel\TradePlanDetails.cs" />
+    <Compile Include="DataModel\TradePositions.cs" />
+    <Compile Include="IGStreamSubscriptions.cs" />
+    <Compile Include="IIGStatusEvent.cs" />
+    <Compile Include="ITradingHost.cs" />
+    <Compile Include="ITradingSystem.cs" />
+    <Compile Include="LibDef.cs" />
+    <Compile Include="RepositoryFactory.cs" />
+    <Compile Include="TradeAnalysis\AnalyzePriceAction.cs" />
+    <Compile Include="TradeAnalysis\AnalyzeSupportResistance.cs" />
+    <Compile Include="TradeAnalysis\AnalyzeTrend.cs" />
+    <Compile Include="TradeAnalysis\AnalyzeTurningPoints.cs" />
+    <Compile Include="TradeAnalysis\Indicators.cs" />
+    <Compile Include="TradeMgr.cs" />
+    <Compile Include="TradePlan\Data\TradePlanData.cs" />
+    <Compile Include="TradePlan\PricePatterns\IPricePattern.cs" />
+    <Compile Include="TradePlan\PricePatterns\PatternFlag.cs" />
+    <Compile Include="TradePlan\PricePatterns\PatternTriangle.cs" />
+    <Compile Include="TradePlan\PricePatterns\PricePatternMgr.cs" />
+    <Compile Include="TradePlan\TradePlanBase.cs" />
+    <Compile Include="TradePlan\TradePlanGeneric.cs" />
+    <Compile Include="TradePlan\TradePlanMA.cs" />
+    <Compile Include="TradePlan\TradePlanPriceAction.cs" />
+    <Compile Include="TradePlan\TradeRules\ITradeRule.cs" />
+    <Compile Include="TradePlan\TradeRules\TradeRuleSupRes.cs" />
+    <Compile Include="TradePlan\TradeRules\TradeRuleTrend.cs" />
+    <Compile Include="TradingConfig.cs" />
+    <Compile Include="TradingDataStream.cs" />
+    <Compile Include="TradingDBManage.cs" />
+    <Compile Include="TradingImpl.cs" />
+    <Compile Include="ITrading.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TradingRepository.cs" />
+    <Compile Include="Types\DataStreamParam.cs" />
+    <Compile Include="Types\DataStreamUpdateEvent.cs" />
+    <Compile Include="Types\IGStatusData.cs" />
+    <Compile Include="Types\InstrDataList.cs" />
+    <Compile Include="Types\SupResLine.cs" />
+    <Compile Include="Types\TradeParam.cs" />
+    <Compile Include="Types\TradePosition.cs" />
+    <Compile Include="Types\TurnPoint.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\common\Defs\Medley.Common.Defs.csproj">
+      <Project>{de983ac7-67b8-4311-ab31-32d82357b8ed}</Project>
+      <Name>Medley.Common.Defs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\common\Logging\Medley.Common.Logging.csproj">
+      <Project>{c4af97f3-cfc7-4d07-ac5f-a1d0c0417431}</Project>
+      <Name>Medley.Common.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\common\Medley.ADODatabase\Medley.Common.ADODatabase.csproj">
+      <Project>{6b46044e-b600-443d-92b5-cb2e2d3deec7}</Project>
+      <Name>Medley.Common.ADODatabase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\common\Utils\Medley.Common.Utils.csproj">
+      <Project>{d9e89d18-1c82-45a0-8e5b-15969434036d}</Project>
+      <Name>Medley.Common.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IGPublicPcl\IGPublicPcl.csproj">
+      <Project>{269d3a2f-289f-4a78-98fd-21e3f5ac5e4f}</Project>
+      <Name>IGPublicPcl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

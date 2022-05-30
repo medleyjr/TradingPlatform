@@ -1,0 +1,8 @@
+{
+	LiveAPIKey : "",
+	LiveUsername : "",
+	LivePwd : "",
+	DemoAPIKey : "",
+	DemoUsername : "",
+	DemoPwd : ""
+}

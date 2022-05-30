@@ -1,0 +1,1 @@
+select * from InstrumentHistoryData where resolution = 'MINUTE' and (CloseBidPrice is null or OpenBidPrice is null or HighBidPrice is null or LowBidPrice is null)
